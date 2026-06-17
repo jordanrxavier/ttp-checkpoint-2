@@ -23,11 +23,11 @@
 
 // The following array is provided. Do not change it.
 const players = [
-  { id: 1, name: "LeBron",  score: 42 },
-  { id: 2, name: "Curry",   score: 31 },
-  { id: 3, name: "Messi",   score: 55 },
-  { id: 4, name: "Serena",  score: 18 },
-  { id: 5, name: "Brady",   score: 67 },
+  { id: 1, name: "LeBron", score: 42 },
+  { id: 2, name: "Curry", score: 31 },
+  { id: 3, name: "Messi", score: 55 },
+  { id: 4, name: "Serena", score: 18 },
+  { id: 5, name: "Brady", score: 67 },
 ]
 
 function SectionA() {
@@ -55,11 +55,18 @@ function SectionA() {
       <h3>All Players</h3>
       <ul>
         {/* A1: map players here: */}
-
+        {players.map((player) => (
+          <li key={player.id}>{player.name}: {player.score}</li>
+        ))}
       </ul>
 
       {/* A2: filtered list goes here: */}
-
+      <h3>Score above 30</h3>
+      <ul>
+        {players.filter((player) => player.score > 30).map((player) => (
+          <li key={player.id}>{player.name}: {player.score}</li>
+        ))}
+      </ul>
     </div>
   )
 }
@@ -80,7 +87,13 @@ function SectionA() {
 //
 // Write PlayerRow here:
 
-
+function PlayerRow({ name, score }) {
+  return (
+    <div>
+      {name}: {score}
+    </div>
+  )
+}
 
 function SectionB() {
   // B2.
@@ -100,7 +113,9 @@ function SectionB() {
     <div>
       <h2>Section B — Lists and Components</h2>
       {/* B2: map PlayerRow components here */}
-
+      {players.map((player) => (
+        <PlayerRow key={player.id} name={player.name} score={player.score} />
+      ))}
     </div>
   )
 }

@@ -19,7 +19,8 @@
 // SECTION A — JSX Basics
 //
 // Why we learn this:
-//   JSX is the syntax React uses to describe what goes on the screen.
+//   JSX is the syntax React us
+// tes to describe what goes on the screen.
 //   It looks like HTML, but it lives inside JavaScript. Before you can
 //   build anything in React, you need to understand how JSX works and
 //   how to mix JavaScript values into it.
