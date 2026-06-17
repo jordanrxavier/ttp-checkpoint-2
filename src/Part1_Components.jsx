@@ -29,7 +29,8 @@ function SectionA() {
   // A1.
   // Declare a variable called myName and assign it your first name as a string.
   // Declare a variable called myCity and assign it the city you are from.
-
+  const myName = "Jordan";
+  const myCity = "San Jose";
 
   // A2.
   // Inside the return below, add a <p> tag that displays your name.
@@ -56,12 +57,21 @@ function SectionA() {
   // EXPLAIN: What is JSX? How is it different from plain HTML?
   //          Why do you need curly braces to embed a variable's value?
   //
-  //          answer:
+  //          answer: JSX lets you write code thats usually in html file in javascript file
+  //          which react renders. Curly braces show the program what is javascript code vs
+  //          html like code.
+
+  const sum = 25 + 17;
 
   return (
     <div>
       <h2>Section A — JSX Basics</h2>
       {/* Your output goes below this line */}
+      <p>{myName}</p>
+      <p>{myCity}</p>
+      <p>{myName.toUpperCase()}</p>
+      <p>{myName.length}</p>
+      <p>25 + 17 = {sum}</p>
 
     </div>
   )
@@ -86,14 +96,31 @@ function SectionA() {
 //     (href="#" is fine — we are not building real links yet)
 //
 // Write PageHeader here:
-
+function PageHeader() {
+  return (
+    <header>
+      <h1>My React App</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+  )
+}
 
 // B2.
 // Create a component called PageFooter.
 // It should return a <footer> element with a <p> that says "2026 TTP".
 //
 // Write PageFooter here:
-
+function PageFooter() {
+  return (
+    <footer>
+      <p>2026 TTP</p>
+    </footer>
+  )
+}
 
 function SectionB() {
   // B3.
@@ -104,14 +131,17 @@ function SectionB() {
   //          Why do we split UI into separate components instead of
   //          writing everything inside one big function?
   //
-  //          answer:
+  //          answer: React components are reusable bits of code. They
+  //          Splitting into seperate components keeps code organized
+  //        and efficient in that you do not have to rewrite things over and over.
 
 
   return (
     <div>
       <h2>Section B — Your Own Components</h2>
       {/* Render your components below */}
-
+      <PageHeader />
+      <PageFooter />
     </div>
   )
 }
